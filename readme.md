@@ -36,4 +36,4 @@ We welcome contributions from the community. To contribute to SavetoSafe, follow
 This project is licensed under the MIT License. See the LICENSE file for more details. 📄📜
 
 ## Contact:
-For any questions or inquiries, please contact us at support@savetosafe.com. 📧📞
+For any questions or inquiries, please contact us at gabrielfpcarballo@gmail.com. 📧📞
