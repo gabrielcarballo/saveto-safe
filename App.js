@@ -1,12 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar, SafeAreaView, StyleSheet, Text } from 'react-native';
+import React from 'react';
+import { Basket } from './src/screens/Basket';
 
 export default function App() {
+  const banana = {
+    name: 'Banana',
+    price: 1.5,
+    quantity: 1,
+  };
+  
   return (
-    <View style={styles.container}>
-      <Text>Out little market spreadsheet</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <StatusBar/>
+      <Basket productInfo={banana}/>
+
+    </SafeAreaView>
   );
 }
 
@@ -14,7 +22,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    alignContent: 'center',
   },
 });
