@@ -1,18 +1,13 @@
 import { StatusBar, SafeAreaView, StyleSheet, Text } from 'react-native';
 import React from 'react';
-import { Basket } from './src/screens/Basket';
+import Details from './src/screens/details/Details';
 
 export default function App() {
-  const banana = {
-    name: 'Banana',
-    price: 1.5,
-    quantity: 1,
-  };
   
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar/>
-      <Basket productInfo={banana}/>
+      <Details />
 
     </SafeAreaView>
   );

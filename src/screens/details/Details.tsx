@@ -1,24 +1,18 @@
 import React from "react";
 import { StyleSheet, Dimensions, Text, Image, View, Button } from "react-native";
+import DetailsCard from "./DetailsCard";
 
-const top = require('../../assets/topo.png');
+const top = require('../../../assets/topo.png');
 
 const { width } = Dimensions.get('screen');
 
-function Basket() {
+function detailsScreen() {
   return (
     <>
       <Image source={top} style={styles.top} />
-      <Text style={styles.title}> Basket Details </Text>
-
+      <Text style={styles.title}> Product Details </Text>
       <View style={styles.view}>
-        <Text>Groceries</Text>
-        <Text>Product Name</Text>
-        <Text style={styles.description}>
-          A Description about the product
-        </Text>
-        <Text>Price</Text>
-        <Button title="Add to Basket" />
+        <DetailsCard />
       </View>
     </>
   )
@@ -45,15 +39,13 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 16,
     paddingVertical: 8,
     paddingHorizontal: 16,
+    backgroundColor: '#fff'
+    
 
   },
-  description: {
-    fontSize: 12,
-    fontWeight: "200",
-    fontStyle: "italic"
-  }
+ 
 }
 );
 
 
-export { Basket };
+export default detailsScreen;

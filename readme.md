@@ -8,6 +8,12 @@ SavetoSafe is a mobile app built with React Native that helps small families kee
 - Categorize purchases by establishment 🏪
 - Generate reports and statistics 📊📈
 
+## Screens:
+- **Homepage**: Displays all products with direct add to shopping list functionality
+- **Details Screen**: Shows product details
+- **Shopping List Screen**: Lists all products added to the shopping list
+- **Complete Screen**: Allows the user to mark items as complete while shopping
+
 ## Installation:
 1. Clone the repository: `git clone https://github.com/your-username/SavetoSafe.git`
 2. Install dependencies: `npm install`
