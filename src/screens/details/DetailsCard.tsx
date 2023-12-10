@@ -6,7 +6,7 @@ export default function DetailsCard() {
 
   return (
     <>
-      <View style={{ flexDirection: 'row' }}>
+      <View style={styles.container}>
         <View style={styles.detailsCard}>
           <Text style={styles.productName}>Brócoli</Text>
           <Text style={styles.productTag}>VERDURA</Text>
@@ -41,9 +41,11 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     padding: 4,
     borderRadius: 4,
-    alignSelf: "flex-start",
   },
   detailsCard: {
+    alignItems: "flex-start",
+    flex: 1,
+
   },
   price: {
     fontSize: 22,
@@ -52,9 +54,12 @@ const styles = StyleSheet.create({
 
   },
   priceCard: {
-    flex: 1,
     justifyContent: "flex-start",
-    alignItems: 'flex-end'
-
+    alignItems: 'flex-end',
   },
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 16,
+  }
 });
