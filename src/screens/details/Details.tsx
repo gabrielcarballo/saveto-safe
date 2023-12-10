@@ -25,13 +25,12 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
     textAlign: 'center',
     marginTop: 16,
     position: 'absolute',
     width: '100%',
     color: '#fff',
-
+    fontFamily: 'Montserrat-Bold'
   },
   view: {
     flex: 1,
