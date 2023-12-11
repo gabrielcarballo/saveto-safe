@@ -1,7 +1,9 @@
 {
-  "compilerOptions": {},
-  "extends": "expo/tsconfig.base",
-  "include": [
-    "**/*",
-  ]
-}
+    "compilerOptions": {},
+    "extends": "expo/tsconfig.base",
+    "include": [
+      "**/*",
+      // "/src/screens/*",
+      // "/src/components/*" 
+    ]
+  }

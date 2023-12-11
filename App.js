@@ -1,11 +1,8 @@
 import { StatusBar, SafeAreaView, StyleSheet, Text } from 'react-native';
 import React from 'react';
-import Details from './src/screens/details/Details';
+import Details from './src/screens/details';
 import { useFonts } from 'expo-font';
 import { Montserrat_400Regular, Montserrat_400Regular_Italic, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
-//make custom Text components with fonts
-// Replace the default font with the custom font
-
 
 export default function App() {
   const [loaded] = useFonts({
