@@ -14,11 +14,14 @@ export default function DetailsCard({ detailsCard }: Omit<detailsMockProps, 'tit
             return <MontserratText key={i} style={styles.productTag}>{tag}</MontserratText>
           }) : null}
           <MontserratText style={styles.description}>
-            A Description about the product
+            {detailsCard.productDescription}
           </MontserratText>
         </View>
         <View style={styles.priceCard}>
-          <MontserratText style={styles.price}>$ 15</MontserratText>
+          {detailsCard.productPrice > 0 ? <MontserratText style={styles.price}>
+            $ {detailsCard.productPrice}
+          </MontserratText> :
+            <MontserratText style={styles.price}>Free</MontserratText>}
         </View>
       </View>
       <Button title="Add to Shoplist" />
@@ -48,7 +51,6 @@ const styles = StyleSheet.create({
   detailsCard: {
     alignItems: "flex-start",
     flex: 1,
-
   },
   price: {
     fontSize: 22,
