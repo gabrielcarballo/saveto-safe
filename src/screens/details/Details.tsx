@@ -11,7 +11,7 @@ function detailsScreen() {
   return (
     <>
       <Image source={top} style={styles.top} />
-      <MontserratText style={styles.title}> Product Details </MontserratText>
+      <MontserratText style={styles.title}>Product Details</MontserratText>
       <View style={styles.view}>
         <DetailsCard />
       </View>

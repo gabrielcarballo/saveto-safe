@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Dimensions, Text, Image, View, Button, Alert } from "react-native";
+import { StyleSheet, View, Button } from "react-native";
 import MontserratText from "../../components/MontserratText";
 
 
