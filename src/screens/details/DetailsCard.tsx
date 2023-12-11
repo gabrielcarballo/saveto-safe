@@ -1,16 +1,20 @@
 import React from "react";
 import { StyleSheet, View, Button } from "react-native";
 import MontserratText from "../../components/MontserratText";
+import { detailsMockProps } from "../../mocks/details";
+import { detailsMock } from '../../mocks/details/index';
 
 
-export default function DetailsCard() {
-
+export default function DetailsCard({ detailsCard }: Omit<detailsMockProps, 'title'>) {
+  console.log('detailsCard', typeof detailsCard.productTags)
   return (
     <>
       <View style={styles.container}>
         <View style={styles.detailsCard}>
-          <MontserratText style={styles.productName}>Brócoli</MontserratText>
-          <MontserratText style={styles.productTag}>VERDURA</MontserratText>
+          <MontserratText style={styles.productName}>{detailsCard.productName}</MontserratText>
+          {typeof detailsCard.productTags === 'object' ? detailsCard.productTags.map((tag, i) => {
+            return <MontserratText key={i} style={styles.productTag}>{tag}</MontserratText>
+          }) : null}
           <MontserratText style={styles.description}>
             A Description about the product
           </MontserratText>
@@ -36,11 +40,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   productTag: {
-    fontSize: 12,
+    fontSize: 10,
     color: "white",
     backgroundColor: "black",
     padding: 4,
     borderRadius: 4,
+    marginBottom: 2,
   },
   detailsCard: {
     alignItems: "flex-start",

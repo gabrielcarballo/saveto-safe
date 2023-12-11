@@ -1,19 +1,20 @@
 import React from "react";
-import { StyleSheet, Dimensions, Text, Image, View, Button } from "react-native";
+import { StyleSheet, Dimensions, Image, View } from "react-native";
 import DetailsCard from "./DetailsCard";
 import MontserratText from "../../components/MontserratText";
-
+import { detailsMockProps } from '../../mocks/details';
 const top = require('../../../assets/topo.png');
 
 const { width } = Dimensions.get('screen');
 
-function detailsScreen() {
+function detailsScreen({ detailsMock }) {
+  console.log('index', detailsMock)
   return (
     <>
       <Image source={top} style={styles.top} />
-      <MontserratText style={styles.title}>Product Details</MontserratText>
+      <MontserratText style={styles.title}>{detailsMock.title}</MontserratText>
       <View style={styles.view}>
-        <DetailsCard />
+        <DetailsCard detailsCard={detailsMock.detailsCard} />
       </View>
     </>
   )
@@ -40,10 +41,10 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 16,
     backgroundColor: '#fff'
-    
+
 
   },
- 
+
 }
 );
 
