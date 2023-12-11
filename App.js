@@ -3,6 +3,8 @@ import React from 'react';
 import Details from './src/screens/details/Details';
 import { useFonts } from 'expo-font';
 import { Montserrat_400Regular, Montserrat_400Regular_Italic, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
+//make custom Text components with fonts
+// Replace the default font with the custom font
 
 
 export default function App() {
@@ -13,7 +15,7 @@ export default function App() {
   });
 
   if (!loaded) {
-    return <Text>Não foi</Text>;
+    return null;
   }
 
   return (
@@ -30,6 +32,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     justifyContent: 'flex-start',
     alignContent: 'center',
-    fontFamily: 'Montserrat-Regular',
   },
 });

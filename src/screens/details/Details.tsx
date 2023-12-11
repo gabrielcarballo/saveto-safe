@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Dimensions, Text, Image, View, Button } from "react-native";
 import DetailsCard from "./DetailsCard";
+import MontserratText from "../../components/MontserratText";
 
 const top = require('../../../assets/topo.png');
 
@@ -10,7 +11,7 @@ function detailsScreen() {
   return (
     <>
       <Image source={top} style={styles.top} />
-      <Text style={styles.title}> Product Details </Text>
+      <MontserratText style={styles.title}> Product Details </MontserratText>
       <View style={styles.view}>
         <DetailsCard />
       </View>
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: '100%',
     color: '#fff',
-    fontFamily: 'Montserrat-Bold'
+    fontWeight: 'bold',
   },
   view: {
     flex: 1,

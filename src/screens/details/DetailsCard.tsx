@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Dimensions, Text, Image, View, Button, Alert } from "react-native";
+import MontserratText from "../../components/MontserratText";
 
 
 export default function DetailsCard() {
@@ -8,14 +9,14 @@ export default function DetailsCard() {
     <>
       <View style={styles.container}>
         <View style={styles.detailsCard}>
-          <Text style={styles.productName}>Brócoli</Text>
-          <Text style={styles.productTag}>VERDURA</Text>
-          <Text style={styles.description}>
+          <MontserratText style={styles.productName}>Brócoli</MontserratText>
+          <MontserratText style={styles.productTag}>VERDURA</MontserratText>
+          <MontserratText style={styles.description}>
             A Description about the product
-          </Text>
+          </MontserratText>
         </View>
         <View style={styles.priceCard}>
-          <Text style={styles.price}>$ 15</Text>
+          <MontserratText style={styles.price}>$ 15</MontserratText>
         </View>
       </View>
       <Button title="Add to Shoplist" />
@@ -26,8 +27,8 @@ export default function DetailsCard() {
 const styles = StyleSheet.create({
   description: {
     fontSize: 12,
-    fontWeight: "200",
     fontStyle: "italic",
+    color: "#777ff",
   },
 
   productName: {
@@ -36,7 +37,6 @@ const styles = StyleSheet.create({
   },
   productTag: {
     fontSize: 12,
-    fontWeight: "bold",
     color: "white",
     backgroundColor: "black",
     padding: 4,
