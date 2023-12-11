@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 12,
     fontStyle: "italic",
-    color: "#777ff",
+    color: '#777c',
   },
 
   productName: {
