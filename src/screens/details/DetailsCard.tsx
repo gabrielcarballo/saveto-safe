@@ -2,11 +2,9 @@ import React from "react";
 import { StyleSheet, View, Button } from "react-native";
 import MontserratText from "../../components/MontserratText";
 import { detailsMockProps } from "../../mocks/details";
-import { detailsMock } from '../../mocks/details/index';
-
 
 export default function DetailsCard({ detailsCard }: Omit<detailsMockProps, 'title'>) {
-  console.log('detailsCard', typeof detailsCard.productTags)
+
   return (
     <>
       <View style={styles.container}>

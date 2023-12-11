@@ -2,13 +2,12 @@ import React from "react";
 import { StyleSheet, Dimensions, Image, View } from "react-native";
 import DetailsCard from "./DetailsCard";
 import MontserratText from "../../components/MontserratText";
-import { detailsMockProps } from '../../mocks/details';
 const top = require('../../../assets/topo.png');
 
 const { width } = Dimensions.get('screen');
 
 function detailsScreen({ detailsMock }) {
-  console.log('index', detailsMock)
+
   return (
     <>
       <Image source={top} style={styles.top} />
