@@ -1,15 +1,16 @@
 import React from "react";
-import { StyleSheet, View, Button } from "react-native";
-import MontserratText from "../../components/MontserratText";
+import { StyleSheet, View } from "react-native";
+import MontserratText from '../../components/MontserratText';
 import { detailsMockProps } from "../../mocks/details";
 import ProductTag from "./ProductTag";
+import CustomButton from "../../components/CustomButton";
 
 export default function DetailsCard({ detailsCard:
   { productDescription,
     productName,
     productPrice,
-    productTags
-  }
+    productTags,
+  }, addToShoppingList
 }: Omit<detailsMockProps, 'title'>) {
 
   return (
@@ -24,7 +25,7 @@ export default function DetailsCard({ detailsCard:
           <MontserratText style={styles.price}>{productPrice > 0 ? '$ ' + productPrice : 'Free'}</MontserratText>
         </View>
       </View>
-      <Button title="Add to Shoplist" />
+      <CustomButton text={addToShoppingList}></CustomButton>
     </>
   )
 }
@@ -59,5 +60,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 16,
-  }
+  },
+
 });

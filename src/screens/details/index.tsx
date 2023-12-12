@@ -8,13 +8,13 @@ const top = require('../../../assets/topo.png');
 const { width } = Dimensions.get('screen');
 
 export default function detailsScreen() {
-  const { title, detailsCard } = detailsMock;
+  const { title, ...detailsCard } = detailsMock;
   return (
     <>
       <Image source={top} style={styles.top} />
       <MontserratText style={styles.title}>{title}</MontserratText>
       <View style={styles.view}>
-        <DetailsCard detailsCard={detailsCard} />
+        <DetailsCard {...detailsCard} />
       </View>
     </>
   )
