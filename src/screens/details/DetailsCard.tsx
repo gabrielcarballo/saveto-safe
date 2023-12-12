@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, View, Button } from "react-native";
 import MontserratText from "../../components/MontserratText";
 import { detailsMockProps } from "../../mocks/details";
+import ProductTag from "./ProductTag";
 
 export default function DetailsCard({ detailsCard:
   { productDescription,
@@ -16,9 +17,7 @@ export default function DetailsCard({ detailsCard:
       <View style={styles.container}>
         <View style={styles.detailsCard}>
           <MontserratText style={styles.productName}>{productName}</MontserratText>
-          {Array.isArray(productTags) ? productTags.map((tag, i) => {
-            return <MontserratText key={i} style={styles.productTag}>{tag}</MontserratText>
-          }) : null}
+          <ProductTag productTags={productTags} />
           <MontserratText style={styles.description}>{productDescription}</MontserratText>
         </View>
         <View style={styles.priceCard}>
@@ -41,14 +40,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
   },
-  productTag: {
-    fontSize: 10,
-    color: "white",
-    backgroundColor: "black",
-    padding: 4,
-    borderRadius: 4,
-    marginBottom: 2,
-  },
+
   detailsCard: {
     alignItems: "flex-start",
     flex: 1,
