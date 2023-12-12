@@ -3,25 +3,26 @@ import { StyleSheet, View, Button } from "react-native";
 import MontserratText from "../../components/MontserratText";
 import { detailsMockProps } from "../../mocks/details";
 
-export default function DetailsCard({ detailsCard }: Omit<detailsMockProps, 'title'>) {
+export default function DetailsCard({ detailsCard:
+  { productDescription,
+    productName,
+    productPrice,
+    productTags
+  }
+}: Omit<detailsMockProps, 'title'>) {
 
   return (
     <>
       <View style={styles.container}>
         <View style={styles.detailsCard}>
-          <MontserratText style={styles.productName}>{detailsCard.productName}</MontserratText>
-          {typeof detailsCard.productTags === 'object' ? detailsCard.productTags.map((tag, i) => {
+          <MontserratText style={styles.productName}>{productName}</MontserratText>
+          {Array.isArray(productTags) ? productTags.map((tag, i) => {
             return <MontserratText key={i} style={styles.productTag}>{tag}</MontserratText>
           }) : null}
-          <MontserratText style={styles.description}>
-            {detailsCard.productDescription}
-          </MontserratText>
+          <MontserratText style={styles.description}>{productDescription}</MontserratText>
         </View>
         <View style={styles.priceCard}>
-          {detailsCard.productPrice > 0 ? <MontserratText style={styles.price}>
-            $ {detailsCard.productPrice}
-          </MontserratText> :
-            <MontserratText style={styles.price}>Free</MontserratText>}
+          <MontserratText style={styles.price}>$ {productPrice > 0 ? productPrice : 'Free'}</MontserratText>
         </View>
       </View>
       <Button title="Add to Shoplist" />

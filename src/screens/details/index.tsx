@@ -2,18 +2,19 @@ import React from "react";
 import { StyleSheet, Dimensions, Image, View } from "react-native";
 import DetailsCard from "./DetailsCard";
 import MontserratText from "../../components/MontserratText";
+import { detailsMock } from '../../mocks/details';
 const top = require('../../../assets/topo.png');
 
 const { width } = Dimensions.get('screen');
 
-function detailsScreen({ detailsMock }) {
-
+export default function detailsScreen() {
+  const { title, detailsCard } = detailsMock;
   return (
     <>
       <Image source={top} style={styles.top} />
-      <MontserratText style={styles.title}>{detailsMock.title}</MontserratText>
+      <MontserratText style={styles.title}>{title}</MontserratText>
       <View style={styles.view}>
-        <DetailsCard detailsCard={detailsMock.detailsCard} />
+        <DetailsCard detailsCard={detailsCard} />
       </View>
     </>
   )
@@ -47,5 +48,3 @@ const styles = StyleSheet.create({
 }
 );
 
-
-export default detailsScreen;

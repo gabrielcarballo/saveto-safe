@@ -3,7 +3,6 @@ import React from 'react';
 import Details from './src/screens/details';
 import { useFonts } from 'expo-font';
 import { Montserrat_400Regular, Montserrat_400Regular_Italic, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
-import { detailsMock } from './src/mocks/details'
 
 
 export default function App() {
@@ -20,7 +19,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
-      <Details detailsMock={detailsMock} />
+      <Details />
     </SafeAreaView>
   );
 }

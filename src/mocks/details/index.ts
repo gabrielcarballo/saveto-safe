@@ -11,7 +11,7 @@ export interface detailsMockProps {
 export const detailsMock: detailsMockProps = {
   title: 'Product Details',
   detailsCard: {
-    productName: 'Brócolis',
+    productName: 'Brócoli',
     productPrice: 10,
     productDescription: 'A text about Brocoli',
     productTags: ['veggie', 'organic'].map((tag) => tag.toUpperCase())
