@@ -3,6 +3,7 @@ import { StyleSheet, View } from "react-native";
 import MontserratText from "../../components/MontserratText";
 
 export default function ProductTag({ productTags }: { productTags: string[] | string }) {
+
   return (
     <View style={styles.container}>
       {Array.isArray(productTags) ? productTags.map((tag, i) => {
