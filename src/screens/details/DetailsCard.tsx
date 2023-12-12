@@ -25,7 +25,7 @@ export default function DetailsCard({ detailsCard:
           <MontserratText style={styles.price}>{productPrice > 0 ? '$ ' + productPrice : 'Free'}</MontserratText>
         </View>
       </View>
-      <CustomButton text={addToShoppingList}></CustomButton>
+      <CustomButton onPress={null} text={addToShoppingList}></CustomButton>
     </>
   )
 }
