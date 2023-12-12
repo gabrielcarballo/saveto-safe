@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "Orgs!",
-    "slug": "orgs-cesta",
+    "name": "saveto-safe",
+    "slug": "SavetoSafe",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/save.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
