@@ -4,15 +4,16 @@ import MontserratText from '../../components/MontserratText';
 import { detailsMockProps } from "../../mocks/details";
 import ProductTag from "./ProductTag";
 import CustomButton from "../../components/CustomButton";
+import MarketProductList from "./MarketProductList";
 
 export default function DetailsCard({ detailsCard:
   { productDescription,
     productName,
     productPrice,
     productTags,
-  }, addToShoppingList
+  }, addToShoppingList, marketSearch
 }: Omit<detailsMockProps, 'title'>) {
-
+  console.log('marketSearchNODETAILSCARD', marketSearch)
   return (
     <>
       <View style={styles.container}>
@@ -25,6 +26,7 @@ export default function DetailsCard({ detailsCard:
           <MontserratText style={styles.price}>{productPrice > 0 ? '$ ' + productPrice : 'Free'}</MontserratText>
         </View>
       </View>
+      <MarketProductList marketSearch={marketSearch} />
       <CustomButton onPress={null} text={addToShoppingList}></CustomButton>
     </>
   )
