@@ -1,16 +1,18 @@
 import React from 'react'
 import { StyleSheet, View, FlatList, FlatListProps, Text } from 'react-native'
 import { marketSearchProps } from '../../mocks/details'
+import MontserratText from '../../components/MontserratText'
 
+export default function MarketProductList({ marketSearch }: { marketSearch: marketSearchProps[] }) {
 
-export default function MarketProductList({ marketSearch }) {
-  console.log('marketSearch', marketSearch)
-  const renderItem = ({item} ) => {
-    console.log('itemDoLog', item)
+  const renderItem = ({item}: { item: marketSearchProps }) => {
+    
     return (
+      
       <View style={{ backgroundColor: 'red'}}>
-        <Text >{item.name}</Text>
-        <Text >{item.price}</Text>
+
+        <MontserratText >{item.name}</MontserratText>
+        <MontserratText >{item.price}</MontserratText>
       </View>
     )
   }
@@ -21,10 +23,10 @@ export default function MarketProductList({ marketSearch }) {
     <View style={styles.container}>
       <FlatList
         style={null}
-        horizontal={false}
-        data={[marketSearch]}
+        horizontal={true}
+        data={marketSearch}
         renderItem={renderItem}
-        keyExtractor={({marketSearch}) => marketSearch + 1}
+        keyExtractor={({name}) => name}
       />
     </View>
   )
