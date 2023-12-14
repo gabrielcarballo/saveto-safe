@@ -6,6 +6,8 @@ export interface detailsMockProps {
     productPrice: number,
     productDescription: string,
     productTags: string[] | string,
+    productProducer: string,
+    productWheightorVolume: string | number
   },
   marketSearch: marketSearchProps[]
 }
@@ -22,6 +24,8 @@ export const detailsMock: detailsMockProps = {
   title: 'Product Details',
   detailsCard: {
     productName: 'Brócoli',
+    productProducer: 'Productor 1',
+    productWheightorVolume: '1kg',
     productPrice: 10,
     productDescription: 'A text about Brocoli',
     productTags: ['veggie', 'organic'].map((tag) => tag.toUpperCase())

@@ -2,25 +2,15 @@ import React from 'react'
 import { StyleSheet, View, FlatList, FlatListProps, Text } from 'react-native'
 import { marketSearchProps } from '../../mocks/details'
 import MontserratText from '../../components/MontserratText'
+import MarketPricesCard from './MarketPricesCard'
 
 export default function MarketProductList({ marketSearch }: { marketSearch: marketSearchProps[] }) {
 
-  const renderItem = ({item}: { item: marketSearchProps }) => {
-    
-    return (
-      
-      <View style={{ backgroundColor: 'red'}}>
-
-        <MontserratText >{item.name}</MontserratText>
-        <MontserratText >{item.price}</MontserratText>
-      </View>
-    )
-  }
-
-
+  const renderItem = ({item}: { item: marketSearchProps }) => <MarketPricesCard {...item}/>
 
   return (
-    <View style={styles.container}>
+    <>
+      <MontserratText style={styles.titleList}>Price in other stabilishments</MontserratText>
       <FlatList
         style={null}
         horizontal={true}
@@ -28,21 +18,16 @@ export default function MarketProductList({ marketSearch }: { marketSearch: mark
         renderItem={renderItem}
         keyExtractor={({name}) => name}
       />
-    </View>
+    </>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    borderTopLeftRadius: 16,
-    borderTopRightRadius: 16,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    backgroundColor: '#fff'
-  },
-  priceCard: {
-    justifyContent: "flex-start",
-    alignItems: 'flex-end',
-  },
+  titleList: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 8,
+    alignSelf: 'center',
+    backgroundColor: 'red'
+  }
 })

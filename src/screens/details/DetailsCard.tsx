@@ -11,14 +11,18 @@ export default function DetailsCard({ detailsCard:
     productName,
     productPrice,
     productTags,
+    productProducer,
+    productWheightorVolume
   }, addToShoppingList, marketSearch
 }: Omit<detailsMockProps, 'title'>) {
-  console.log('marketSearchNODETAILSCARD', marketSearch)
+
   return (
     <>
       <View style={styles.container}>
         <View style={styles.detailsCard}>
           <MontserratText style={styles.productName}>{productName}</MontserratText>
+          <MontserratText style={styles.description}>{productProducer}</MontserratText>
+          <MontserratText style={styles.description}>{productWheightorVolume}</MontserratText>
           <ProductTag productTags={productTags} />
           <MontserratText style={styles.description}>{productDescription}</MontserratText>
         </View>
