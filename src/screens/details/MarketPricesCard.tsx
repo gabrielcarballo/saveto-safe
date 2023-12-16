@@ -12,10 +12,14 @@ export default function MarketPricesCard({ distance, image, location, name, pric
         <MontserratText style={styles.productName}>{name}</MontserratText>
         <Image source={{ uri: image }} style={{ width: 60, height: 'auto' }} />
       </ View>
-      <MontserratText style={{ fontWeight: 'bold' }}>{price}</MontserratText>
-      <MontserratText style={styles.description}>{distance}</MontserratText>
-      <MontserratText style={styles.description}>{location}</MontserratText>
-    </View>
+      <View style={styles.glassmorphism}>
+        <MontserratText style={styles.price}>{price}</MontserratText>
+      </View>
+      <View style={styles.locationInfo} >
+        <MontserratText style={styles.description}>{distance}</MontserratText>
+        <MontserratText style={styles.description}>{location}</MontserratText>
+      </View>
+    </View >
   )
 }
 
@@ -23,7 +27,12 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 12,
     fontStyle: "italic",
-    color: '#777c',
+    color: 'black',
+    fontWeight: "bold",
+  },
+  locationInfo: {
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   productName: {
     fontSize: 24,
@@ -31,7 +40,10 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: 'yellow'
+    backgroundColor: 'yellow',
+    justifyContent: 'space-between',
+    padding: 10,
+    
   },
   marketContainer: {
     backgroundColor: 'rgba(96, 96, 215, 0.35)',
@@ -52,5 +64,11 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.37,
     shadowRadius: 10,
+    alignItems: 'center',
+  },
+  price: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: '#1F2687',
   },
 })
