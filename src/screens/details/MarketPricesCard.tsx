@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, View, Image, ImageBackground } from "react-native";
 import MontserratText from '../../components/MontserratText';
 import { marketSearchProps } from "../../mocks/details";
 
@@ -7,11 +7,10 @@ import { marketSearchProps } from "../../mocks/details";
 export default function MarketPricesCard({ distance, image, location, name, price }: marketSearchProps) {
 
   return (
-    <View style={styles.container}>
+    <ImageBackground source={{ uri: image }} style={styles.container}>
       <View style={styles.marketContainer}>
         <MontserratText style={styles.productName}>{name}</MontserratText>
-        <Image source={{ uri: image }} style={{ width: 60, height: 'auto' }} />
-      </ View>
+      </View>
       <View style={styles.glassmorphism}>
         <MontserratText style={styles.price}>{price}</MontserratText>
       </View>
@@ -19,7 +18,7 @@ export default function MarketPricesCard({ distance, image, location, name, pric
         <MontserratText style={styles.description}>{distance}</MontserratText>
         <MontserratText style={styles.description}>{location}</MontserratText>
       </View>
-    </View >
+    </ImageBackground>
   )
 }
 
