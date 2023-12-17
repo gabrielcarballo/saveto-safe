@@ -22,8 +22,8 @@ export default function detailsScreen() {
 
 const styles = StyleSheet.create({
   top: {
-    width: '100%',
-    height: 578 / 768 * width,
+    width: 'auto',
+    height: (578 / 768 * width) * 0.80,
   },
   title: {
     fontSize: 20,

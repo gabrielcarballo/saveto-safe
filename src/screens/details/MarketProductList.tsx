@@ -24,10 +24,9 @@ export default function MarketProductList({ marketSearch }: { marketSearch: mark
 
 const styles = StyleSheet.create({
   titleList: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 8,
+    marginBottom: 16,
     alignSelf: 'center',
-    backgroundColor: 'red'
   }
 })

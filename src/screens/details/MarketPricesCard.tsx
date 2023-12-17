@@ -1,13 +1,22 @@
 import React from "react";
-import { StyleSheet, View, Image, ImageBackground } from "react-native";
+import { StyleSheet, View, Image, TouchableOpacity, Dimensions } from "react-native";
 import MontserratText from '../../components/MontserratText';
 import { marketSearchProps } from "../../mocks/details";
 
+const imageSize = Dimensions.get('window').width / 8; // adjust this as needed
+
 
 export default function MarketPricesCard({ distance, image, location, name, price }: marketSearchProps) {
-
+  let count = 0;
+  const handlePress = () => {
+    count++;
+    console.log(`Pressed on ${name} ${count} times!`);
+  }
   return (
-    <ImageBackground source={{ uri: image }} style={styles.container}>
+    <TouchableOpacity style={styles.container} activeOpacity={0.7} onPress={handlePress}>
+      <View style={styles.imageContainer}>
+        <Image source={{ uri: image }} style={styles.image} />
+      </View>
       <View style={styles.marketContainer}>
         <MontserratText style={styles.productName}>{name}</MontserratText>
       </View>
@@ -18,7 +27,7 @@ export default function MarketPricesCard({ distance, image, location, name, pric
         <MontserratText style={styles.description}>{distance}</MontserratText>
         <MontserratText style={styles.description}>{location}</MontserratText>
       </View>
-    </ImageBackground>
+    </TouchableOpacity>
   )
 }
 
@@ -39,24 +48,42 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: 'yellow',
+    backgroundColor: '#C1D5FD',
     justifyContent: 'space-between',
     padding: 10,
-    
+    marginTop: 10,
+    marginRight: 10,
+    borderRadius: 20,
+  },
+  imageContainer: {
+    width: imageSize,
+    height: imageSize,
+    borderRadius: imageSize / 2,
+    overflow: 'hidden',
+    alignSelf: 'center',
+    position: 'absolute',
+    marginTop: -imageSize / 5,
+    backgroundColor: 'white',
+    zIndex: 1,
+  },
+  image: {
+    width: '100%',
+    height: '100%',
   },
   marketContainer: {
-    backgroundColor: 'rgba(96, 96, 215, 0.35)',
+    backgroundColor: 'white',
     flexDirection: 'row',
     borderRadius: 10,
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     elevation: 5,
     shadowColor: '#1F2687',
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.37,
     shadowRadius: 10,
+    marginTop: 20,
   },
   glassmorphism: {
-    backgroundColor: 'red',
+    backgroundColor: 'white',
     borderRadius: 10,
     elevation: 5,
     shadowColor: '#1F2687',
