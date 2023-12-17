@@ -8,7 +8,6 @@ const imageSize = Dimensions.get('window').width / 8;
 // add to shopping list add the numeber of items to the list
 
 export default function MarketPricesCard({ distance, image, location, name: marketName, price, isSelected, onPress }: marketSearchProps & { isSelected: boolean, onPress: (event: GestureResponderEvent) => void }) {
-  let count = 0;
 
   return (
     <TouchableOpacity style={[styles.container, isSelected ? styles.selected : {}]} activeOpacity={0.9} onPress={onPress}>
@@ -74,15 +73,8 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   marketContainer: {
-    // backgroundColor: 'white',
     flexDirection: 'row',
-    // borderRadius: 10,
     justifyContent: 'center',
-    // elevation: 5,
-    // shadowColor: '#1F2687',
-    // shadowOffset: { width: 0, height: 8 },
-    // shadowOpacity: 0.37,
-    // shadowRadius: 10,
     marginTop: 20,
   },
   priceInfo: {
