@@ -7,15 +7,11 @@ const imageSize = Dimensions.get('window').width / 8;
 //amount button or + and - when clicked
 // add to shopping list add the numeber of items to the list
 
-export default function MarketPricesCard({ distance, image, location, name: marketName, price }: marketSearchProps) {
+export default function MarketPricesCard({ distance, image, location, name: marketName, price, isSelected, onPress }: marketSearchProps & { isSelected: boolean, onPress: (event: GestureResponderEvent) => void }) {
   let count = 0;
-  const [isSelected, setIsSelected] = useState(false);
-  
-  const handlePress = () => {
-    setIsSelected(!isSelected);
-  }
+
   return (
-    <TouchableOpacity style={[styles.container, isSelected ? styles.selected : {}]} activeOpacity={0.9} onPress={handlePress}>
+    <TouchableOpacity style={[styles.container, isSelected ? styles.selected : {}]} activeOpacity={0.9} onPress={onPress}>
       <View style={styles.imageContainer}>
         <Image source={{ uri: image }} style={styles.image} />
       </View>

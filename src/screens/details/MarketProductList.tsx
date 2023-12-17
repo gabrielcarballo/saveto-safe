@@ -1,13 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, View, FlatList, FlatListProps, Text } from 'react-native'
 import { marketSearchProps } from '../../mocks/details'
 import MontserratText from '../../components/MontserratText'
 import MarketPricesCard from './MarketPricesCard'
 
+// add button to order by price
+// add button to order by distance
+// add sort by price or distance
+type chosenMarket = Pick<marketSearchProps, 'name'>
+
+
 export default function MarketProductList({ marketSearch }: { marketSearch: marketSearchProps[] }) {
-
-  const renderItem = ({item}: { item: marketSearchProps }) => <MarketPricesCard {...item}/>
-
+  const [selectedMarket, setSelectedMarket] = useState<string | null>(null);
+  
+  const handlePress = (marketName: string) => {
+    setSelectedMarket(marketName);
+  }
+  const renderItem = ({item}: { item: marketSearchProps }) => 
+  <MarketPricesCard 
+  isSelected={selectedMarket === item.name}
+  onPress={() => {console.log(item); return handlePress(item.name)}}
+  {...item}/>
+  // marketSearch.sort((a, b) => a.price - b.price)
   return (
     <>
       <MontserratText style={styles.titleList}>Price in other stabilishments</MontserratText>
@@ -17,6 +31,7 @@ export default function MarketProductList({ marketSearch }: { marketSearch: mark
         data={marketSearch}
         renderItem={renderItem}
         keyExtractor={({name}) => name}
+        
       />
     </>
   )
