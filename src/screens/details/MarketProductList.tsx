@@ -6,9 +6,6 @@ import MarketPricesCard from './MarketPricesCard'
 import AddToShopButton from '../../components/AddToShopButton'
 import { Button } from 'react-native-paper'
 
-// add button to order by price
-// add button to order by distance
-// add sort by price or distance
 
 export default function MarketProductList({ marketSearch }: { marketSearch: marketSearchProps[] }) {
   const [sortBy, setSortBy] = useState<'price' | 'distance'>('price');
@@ -63,23 +60,32 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 16,
     textAlign: 'center',
+    alignSelf: 'flex-end',
   },
   container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     textAlign: 'center',
-    backgroundColor: 'red',
   },
   sortButton: {
-    backgroundColor: 'purple'
+    padding: 5,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 0,
   },
   selectedSort: {
-    backgroundColor: 'yellow',
+    backgroundColor: '#7bb6e0',
+    padding: 5,
+    borderRadius: 20,
+
+    
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 5,
   },
   sortView: {
     flexDirection: 'column',
     justifyContent: 'space-evenly',
-
-    backgroundColor: 'blue',
-  }
+  },
 })
