@@ -3,16 +3,29 @@ import { StyleSheet, View, Image, TouchableOpacity, Dimensions } from "react-nat
 import MontserratText from '../../components/MontserratText';
 import { marketSearchProps } from "../../mocks/details";
 
-const imageSize = Dimensions.get('window').width / 8; // adjust this as needed
+const imageSize = Dimensions.get('window').width / 8;
+//amount button or + and - when clicked
+// add to shopping list add the numeber of items to the list
 
-
-export default function MarketPricesCard({ distance, image, location, name, price }: marketSearchProps) {
-  const [selected, setSelected] = useState();
-  
+export default function MarketPricesCard({ distance, image, location, name: marketName, price }: marketSearchProps) {
   let count = 0;
+  const [selected, setSelected] = useState({
+    distance,
+    location,
+    marketName,
+    price
+  });
+  
   const handlePress = () => {
     count++;
-    console.log(`Pressed on ${name} ${count} times!`);
+    console.log(`Pressed on ${marketName} ${count} times!`);
+    // setSelected({
+    //   distance,
+
+    //   location,
+    //   marketName,
+    //   price
+    // });
     console.log('objeto', selected);
   }
   return (
@@ -21,7 +34,7 @@ export default function MarketPricesCard({ distance, image, location, name, pric
         <Image source={{ uri: image }} style={styles.image} />
       </View>
       <View style={styles.marketContainer}>
-        <MontserratText style={styles.productName}>{name}</MontserratText>
+        <MontserratText style={styles.productName}>{marketName}</MontserratText>
       </View>
       <View style={styles.priceInfo}>
         <MontserratText style={styles.price}>$ {price}</MontserratText>
