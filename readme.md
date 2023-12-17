@@ -15,14 +15,14 @@ SavetoSafe is a mobile app built with React Native that helps small families kee
 - **Complete Screen**: Allows the user to mark items as complete while shopping
 
 ## Installation:
-1. Clone the repository: `git clone https://github.com/your-username/SavetoSafe.git`
+1. Clone the repository: `git clone https://github.com/gabrielcarballo/SavetoSafe.git`
 2. Install dependencies: `npm install`
 3. Start the app: `npm start`
 
 ## Requirements:
 - React Native version 0.64 or above
 - Node.js version 12 or above
-- Expo CLI for development
+- Expo for development
 
 ## Usage:
 1. Launch the app on your mobile device or emulator 🚀📱
