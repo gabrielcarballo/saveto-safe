@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Image, TouchableOpacity, Dimensions } from "react-native";
+import { StyleSheet, View, Image, TouchableOpacity, Dimensions, GestureResponderEvent } from "react-native";
 import MontserratText from '../../components/MontserratText';
 import { marketSearchProps } from "../../mocks/details";
 
@@ -9,27 +9,13 @@ const imageSize = Dimensions.get('window').width / 8;
 
 export default function MarketPricesCard({ distance, image, location, name: marketName, price }: marketSearchProps) {
   let count = 0;
-  const [selected, setSelected] = useState({
-    distance,
-    location,
-    marketName,
-    price
-  });
+  const [isSelected, setIsSelected] = useState(false);
   
   const handlePress = () => {
-    count++;
-    console.log(`Pressed on ${marketName} ${count} times!`);
-    // setSelected({
-    //   distance,
-
-    //   location,
-    //   marketName,
-    //   price
-    // });
-    console.log('objeto', selected);
+    setIsSelected(!isSelected);
   }
   return (
-    <TouchableOpacity style={styles.container} activeOpacity={0.9} onPress={handlePress}>
+    <TouchableOpacity style={[styles.container, isSelected ? styles.selected : {}]} activeOpacity={0.9} onPress={handlePress}>
       <View style={styles.imageContainer}>
         <Image source={{ uri: image }} style={styles.image} />
       </View>
@@ -73,6 +59,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     width: 200,
     height: 220,
+    borderColor: 'transparent',
+    borderWidth: 2,
   },
   imageContainer: {
     width: imageSize,
@@ -121,5 +109,8 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
     color: 'black',
     fontWeight: "bold",
-  }
+  },
+  selected: {
+    borderColor: '#1F2687',
+  },
 })
