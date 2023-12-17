@@ -18,11 +18,6 @@ export default function MarketProductList({ marketSearch }: { marketSearch: mark
     setSelectedMarket(marketName);
   }, []);
 
-  useEffect(() => {
-    console.log('selectedMarket updated:', selectedMarket);
-  }, [selectedMarket]);
-
-
   const renderItem = ({ item }: { item: marketSearchProps }) =>
     <MarketPricesCard
       isSelected={selectedMarket === item.name}
