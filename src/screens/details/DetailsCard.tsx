@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 import MontserratText from '../../components/MontserratText';
 import { detailsMockProps } from "../../mocks/details";
 import ProductTag from "./ProductTag";
-import CustomButton from "../../components/CustomButton";
+import AddToShopButton from "../../components/AddToShopButton";
 import MarketProductList from "./MarketProductList";
 
 export default function DetailsCard({ detailsCard:
@@ -31,7 +31,7 @@ export default function DetailsCard({ detailsCard:
         </View>
       </View>
       <MarketProductList marketSearch={marketSearch} />
-      <CustomButton onPress={null} text={addToShoppingList}></CustomButton>
+      <AddToShopButton onPress={null} text={addToShoppingList} />
     </>
   )
 }

@@ -4,7 +4,7 @@ import MontserratText from './MontserratText';
 
 
 
-export default function CustomButton({ text, onPress }) {
+export default function AddToShopButton({ text, onPress }) {
   return (
     <TouchableOpacity style={styles.touchable} onPress={onPress}>
       <MontserratText style={styles.touchable.text}>{ text }</MontserratText>
