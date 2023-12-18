@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 20,
 
-    
+
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 5,
