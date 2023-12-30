@@ -49,6 +49,7 @@ export default function MarketProductList({ marketSearch }: { marketSearch: mark
         data={sortedMarketSearch}
         renderItem={renderItem}
         keyExtractor={({ name }) => name}
+        showsHorizontalScrollIndicator={false}
       />
     </>
   )
@@ -73,6 +74,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 0,
+    borderWidth: 1,
+    borderColor: 'black'
   },
   selectedSort: {
     backgroundColor: '#7bb6e0',
