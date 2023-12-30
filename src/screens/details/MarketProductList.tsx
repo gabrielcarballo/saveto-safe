@@ -49,6 +49,7 @@ export default function MarketProductList({ marketSearch }: { marketSearch: mark
         data={sortedMarketSearch}
         renderItem={renderItem}
         keyExtractor={({ name }) => name}
+        showsHorizontalScrollIndicator={false}
       />
     </>
   )
